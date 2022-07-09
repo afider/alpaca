@@ -1,0 +1,18 @@
+.menu-control {
+    border: none;
+    width: 44px;
+    height: 44px;
+    background: yellow;
+    cursor: pointer;
+
+    .is-mobile-menu-open & {
+        background: #2d9cdb;
+    }
+
+    @media (min-width: $mq__tablet) {
+        display: none;
+
+    }
+
+
+}

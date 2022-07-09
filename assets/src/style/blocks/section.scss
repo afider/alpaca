@@ -1,9 +1,10 @@
 .section {
-    padding: var(--space-side-v) 0;
-    overflow: hidden;
+    &_v-spaced {
+        padding: var(--space-side-v) 0;
+    }
 
     &_another {
-        background: var(--color-panel);
+        background: var(--color-panel-2);
     }
 
     &__body {
@@ -11,6 +12,5 @@
         max-width: calc(var(--page-max) + var(--space-side) * 2);
         margin-left: auto;
         margin-right: auto;
-        overflow: auto;
     }
 }

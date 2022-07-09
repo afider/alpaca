@@ -10,7 +10,8 @@
     }
 
     &__header {
-        background: var(--color-panel);
+        background: var(--color-primary);
+        color: var(--color-secondary);
     }
 
     &__body {
@@ -23,7 +24,11 @@
     }
 
     &__footer {
-        background: var(--color-brand);
+        background: var(--color-panel);
         color: var(--color-secondary);
+
+        p {
+            margin-bottom: 0;
+        }
     }
 }

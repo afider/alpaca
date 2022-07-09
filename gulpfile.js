@@ -278,9 +278,7 @@ gulp.task('svg-make', function (done) {
                             prefix: prefix + '-',
                             minify: true
                         }
-                    },
-                    'removeViewBox',
-                    'removeDimensions'
+                    }
                 ]
             }
         }))
