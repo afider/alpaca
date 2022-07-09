@@ -16,8 +16,14 @@
     }
 
     &__content {
+        height: 100%;
         position: relative;
         z-index: 1;
+
+        &_to-bottom {
+            display: flex;
+            align-items: flex-end;
+        }
     }
 
     &__footer {

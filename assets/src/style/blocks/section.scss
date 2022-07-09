@@ -8,6 +8,7 @@
     }
 
     &__body {
+        width: 100%;
         @include sides-space;
         max-width: calc(var(--page-max) + var(--space-side) * 2);
         margin-left: auto;
