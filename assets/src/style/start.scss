@@ -55,7 +55,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--color-secondary);
-    font-family: 'PTSans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: var(--color-primary);
     font-size: var(--font-size);
@@ -90,7 +90,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     color: var(--color-primary);
     font-size: var(--font-size-h1);
     line-height: var(--line-height-h);
-    font-family: 'PTSerif', BlinkMacSystemFont, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
     font-weight: bold;
 }
 
@@ -187,9 +186,4 @@ svg {
     display: block;
     width: 100%;
     height: 100%;
-}
-
-.rouble {
-    font-family: Rouble, sans-serif;
-    font-weight: normal;
 }
