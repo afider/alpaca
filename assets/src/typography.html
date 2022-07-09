@@ -6,26 +6,7 @@
 <body class="layout">
 	<div class="svg-sprite" id="svg-icons"></div>
 	<div class="svg-sprite" id="svg-images"></div>
-	<header class="layout__header">
-		<div class="section">
-			<div class="section__body">
-				<nav class="menu">
-					<ul class="menu__list">
-						<li class="menu__item">
-							<a href="#" class="menu__link">Пункт меню</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__link">еще пункт меню</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__link">следующий пункт</a>
-						</li>
-					</ul>
-				</nav>
-				<p>Декретное время ищет непреложный метеорный дождь. Когда речь идет о галактиках, зенитное часовое число колеблет математический горизонт.</p>
-			</div>
-		</div>
-	</header>
+	<partial src="_header.html"></partial>
 	<main class="layout__body">
 		<section class="section section_v-spaced">
 			<div class="section__body">
@@ -148,11 +129,7 @@
 			</div>
 		</section>
 	</main>
-	<footer class="layout__footer section section_v-spaced">
-		<div class="section__body">
-			<p>Верстка — Евгений Бескровный</p>
-		</div>
-	</footer>
+	<partial src="_footer.html"></partial>
 	<partial src="_scripts.html"></partial>
 </body>
 </html>

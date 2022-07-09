@@ -1,0 +1,25 @@
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    background: var(--color-overlay);
+    border: none;
+    transition-property: opacity, visibility;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--ease);
+    z-index: 10;
+
+    .is-menu-open & {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media (min-width: $mq__tablet) {
+        display: none;
+    }
+}

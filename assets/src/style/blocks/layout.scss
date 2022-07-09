@@ -4,12 +4,9 @@
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
 
-    &__header,
-    &__footer {
-
-    }
-
     &__header {
+        position: relative;
+        z-index: 11;
         background: var(--color-primary);
         color: var(--color-secondary);
     }

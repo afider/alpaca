@@ -14,19 +14,29 @@
 
     &__item {
         &_menu {
+
+            .is-menu-open & {
+                @media (max-width: $mq__tablet_down) {
+                    transform: translateX(0);
+                }
+            }
+
             @media (max-width: $mq__tablet_down) {
-                z-index: 2;
+                background: var(--color-primary);
+                z-index: 1;
                 position: fixed;
                 top: var(--header-height);
                 right: 0;
                 bottom: 0;
-                left: 0;
+                transform: translateX(100%);
+                width: var(--menu-width);
+                transition-property: transform;
+                transition-duration: var(--animation-duration);
+                transition-timing-function: var(--ease);
             }
 
-            @media (min-width: $mq__tablet) {
-                display: flex;
-                justify-content: center;
-                flex: 1 1 auto;
+            @media (max-width: $mq__mobile_down) {
+                width: 100%;
             }
         }
 
@@ -45,53 +55,7 @@
     }
 
     &__menu {
-        .is-menu-open & {
-            @media (max-width: $mq__tablet_down) {
-                transform: translateX(0);
-            }
-        }
 
-        @media (max-width: $mq__tablet_down) {
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            transform: translateX(100%);
-            width: var(--menu-width);
-            transition-property: transform;
-            transition-duration: var(--animation-duration);
-            transition-timing-function: var(--ease);
-        }
-
-        @media (max-width: $mq__mobile_down) {
-            width: 100%;
-        }
-    }
-
-    &__menu-close {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        cursor: pointer;
-        background: var(--color-overlay);
-        border: none;
-        transition-property: opacity, visibility;
-        transition-duration: var(--animation-duration);
-        transition-timing-function: var(--ease);
-
-        .is-menu-open & {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @media (min-width: $mq__tablet) {
-            display: none;
-        }
     }
 
 }
