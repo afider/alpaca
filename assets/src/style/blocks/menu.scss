@@ -1,14 +1,18 @@
 .menu {
     background: var(--color-primary);
 
-    & &__list {
+    &__list {
         margin: 0 0 0 -10px;
         padding: 0;
         list-style-type: none;
         display: flex;
+
+        @media (max-width: $mq__tablet_down) {
+            flex-direction: column;
+        }
     }
 
-    & &__link {
+    &__link {
         margin: 0;
         padding: 2px 10px;
         border-bottom: none;

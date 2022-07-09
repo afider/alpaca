@@ -1,8 +1,11 @@
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: var(--header-height);
+
+    @media (min-width: $mq__mobile) {
+        justify-content: space-between;
+    }
 
     &__logo {
         position: relative;
@@ -30,7 +33,21 @@
 
             @media (min-width: $mq__tablet) {
                 display: flex;
+                justify-content: center;
                 flex: 1 1 auto;
+            }
+        }
+
+        &_control {
+            @media (min-width: $mq__tablet) {
+                display: none;
+            }
+        }
+
+        &_info {
+            margin-left: auto;
+            @media (min-width: $mq__mobile) {
+                margin-left: 0;
             }
         }
     }
@@ -48,8 +65,14 @@
             top: 0;
             right: 100%;
             bottom: 0;
-            width: 300px;
+            width: 374px;
         }
+
+        @media (max-width: $mq__mobile_down) {
+            left: 0;
+            width: auto;
+        }
+
     }
 
     &__menu-close {
@@ -60,6 +83,10 @@
         bottom: 0;
         left: 0;
         cursor: pointer;
+
+        @media (min-width: $mq__tablet) {
+            display: none;
+        }
     }
 
 }

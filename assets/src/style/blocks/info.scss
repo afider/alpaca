@@ -1,3 +1,11 @@
 .info {
     display: inline-flex;
+
+    &__content {
+        display: none;
+
+        @media (min-width: $mq__mobile) {
+            display: block;
+        }
+    }
 }
