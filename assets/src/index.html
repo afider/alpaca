@@ -3,7 +3,7 @@
 <head>
 	<partial src="_head.html" title="Альпака меню"></partial>
 </head>
-<body class="layout is-mobile-menu-open">
+<body class="layout">
 	<div class="svg-sprite" id="svg-icons"></div>
 	<div class="svg-sprite" id="svg-images"></div>
 	<header class="layout__header section">
@@ -25,7 +25,7 @@
 						</li>
 					</ul>
 				</nav>
-				<button class="header__menu-close">Close</button>
+				<button class="header__menu-close" aria-label="Menu" aria-controls="main_menu" data-toggle-menu></button>
 			</div>
 			<div class="header__item header__item_info">
 				<a href="tel:+13212223333" class="info">
@@ -36,7 +36,7 @@
 				</a>
 			</div>
 			<div class="header__item header__item_control">
-				<button class="menu-control" aria-label="Menu" aria-controls="main_menu">
+				<button class="menu-control" aria-label="Menu" aria-controls="main_menu" data-toggle-menu>
 					<div class="menu-control__item"></div>
 				</button>
 			</div>

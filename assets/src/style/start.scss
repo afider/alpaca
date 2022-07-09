@@ -27,11 +27,13 @@
     --line-height-h: 1.2;
 
     // Dimentions
+    --tap-region: 44px;
     --page-max: 1196px;
     --space-side: 23px;
     --space-side-v: 20px;
     --space-bottom: 20px;
     --header-height: 80px;
+    --menu-width: 374px;
 
     // Animation
     --animation-delay: 0.15s;
@@ -39,8 +41,7 @@
     --animation-duration: 0.3s;
     --animation-duration-fast: 0.2s;
 
-    --ease-opacity: cubic-bezier(0.165, 0.84, 0.44, 1); // easeOutQuart
-    --ease-transform: cubic-bezier(0.19, 1, 0.22, 1); // $easeOutExpo
+    --ease: cubic-bezier(0.16, 1, 0.3, 1); // easeOutQuart
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change

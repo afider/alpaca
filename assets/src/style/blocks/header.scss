@@ -9,17 +9,11 @@
 
     &__logo {
         position: relative;
-        top: 7px;
+        margin-left: calc(var(--space-side) * -1 + 6px);
     }
 
     &__item {
         &_menu {
-            .is-mobile-menu-open & {
-                @media (max-width: $mq__tablet_down) {
-
-                }
-            }
-
             @media (max-width: $mq__tablet_down) {
                 z-index: 2;
                 position: fixed;
@@ -27,8 +21,6 @@
                 right: 0;
                 bottom: 0;
                 left: 0;
-                background: var(--color-overlay);
-
             }
 
             @media (min-width: $mq__tablet) {
@@ -53,9 +45,9 @@
     }
 
     &__menu {
-        .is-mobile-menu-open & {
+        .is-menu-open & {
             @media (max-width: $mq__tablet_down) {
-                right: 0;
+                transform: translateX(0);
             }
         }
 
@@ -63,26 +55,39 @@
             z-index: 1;
             position: absolute;
             top: 0;
-            right: 100%;
+            right: 0;
             bottom: 0;
-            width: 374px;
+            transform: translateX(100%);
+            width: var(--menu-width);
+            transition-property: transform;
+            transition-duration: var(--animation-duration);
+            transition-timing-function: var(--ease);
         }
 
         @media (max-width: $mq__mobile_down) {
-            left: 0;
-            width: auto;
+            width: 100%;
         }
-
     }
 
     &__menu-close {
         opacity: 0;
+        visibility: hidden;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         cursor: pointer;
+        background: var(--color-overlay);
+        border: none;
+        transition-property: opacity, visibility;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--ease);
+
+        .is-menu-open & {
+            opacity: 1;
+            visibility: visible;
+        }
 
         @media (min-width: $mq__tablet) {
             display: none;

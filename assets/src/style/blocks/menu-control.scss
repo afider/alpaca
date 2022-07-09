@@ -1,11 +1,11 @@
 .menu-control {
     border: none;
-    width: 44px;
-    height: 44px;
+    width: var(--tap-region);
+    height: var(--tap-region);
     background: yellow;
     cursor: pointer;
 
-    .is-mobile-menu-open & {
+    .is-menu-open & {
         background: #2d9cdb;
     }
 
