@@ -7,11 +7,10 @@ window.addEventListener('DOMContentLoaded', function() {
         const buttons = document.querySelectorAll('[data-toggle-menu]');
         const page = document.getElementsByTagName('body')[0];
         const openState = 'is-menu-open';
-        const timeForWait = 300;
 
         window.addEventListener('resize', debounce(function() {
             page.classList.remove(openState);
-        }, timeForWait));
+        }));
 
         document.addEventListener('keyup', (event) => {
             if (event.code.toUpperCase() === 'ESCAPE') {
