@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', function() {
     toggleMobileMenu();
 
     function toggleMobileMenu() {
-        console.log('xxx');
         const buttons = document.querySelectorAll('[data-toggle-menu]');
         const page = document.getElementsByTagName('body')[0];
         const openState = 'is-menu-open';
