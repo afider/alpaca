@@ -1,0 +1,18 @@
+.content {
+    max-width: 700px;
+
+    &__table,
+    &__img {
+        width: calc(100vw - var(--space-side) * 3);
+
+        @media (min-width: $mq__page-max) {
+            max-width: $mq__page-max;
+        }
+    }
+
+    &_above-bg {
+        background: var(--color-above-bg);
+        padding: 20px;
+        border-radius: 20px;
+    }
+}

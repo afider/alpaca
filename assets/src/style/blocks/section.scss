@@ -8,7 +8,7 @@
 
     &__body {
         @include sides-space;
-        max-width: var(--page-max);
+        max-width: calc(var(--page-max) + var(--space-side) * 2);
         margin-left: auto;
         margin-right: auto;
         overflow: auto;

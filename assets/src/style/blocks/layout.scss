@@ -17,6 +17,11 @@
         position: relative;
     }
 
+    &__content {
+        position: relative;
+        z-index: 1;
+    }
+
     &__footer {
         background: var(--color-brand);
         color: var(--color-secondary);
