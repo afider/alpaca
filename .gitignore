@@ -1,0 +1,5 @@
+node_modules/
+assets/build/
+assets/src/svg/dist/
+.idea/
+package-lock.json

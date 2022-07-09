@@ -1,0 +1,1 @@
+window.SVG_SPRITE = '';

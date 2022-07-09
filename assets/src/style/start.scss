@@ -1,0 +1,195 @@
+:root {
+    --color-primary: rgb(0, 0, 0);
+    --color-secondary: rgb(255, 255, 255);
+    --color-brand: rgb(64, 82, 229);
+    --color-panel: rgb(229, 229, 229);
+    --color-border: rgb(147, 143, 143);
+
+    --color-link: rgba(11,90,176);
+    --color-link-hover: rgb(73, 120, 176);
+    --color-link-visited: rgb(184, 94, 207);
+
+    // Font size
+    --font-size: 16px;
+    --font-size-caption: 12px;
+
+    --font-size-h1: 30px;
+    --font-size-h2: 24px;
+    --font-size-h3: 20px;
+    --font-size-h4: 18px;
+
+    // Line height
+    --line-height: 1.4;
+    --line-height-h: 1.2;
+
+    // Dimentions
+    --page-max: 1020px;
+    --space-side: 20px;
+    --space-side-v: 30px;
+    --space-bottom: 20px;
+
+    // Animation
+    --animation-delay: 0.15s;
+    --animation-duration-slow: 0.5s;
+    --animation-duration: 0.3s;
+    --animation-duration-fast: 0.2s;
+
+    --ease-opacity: cubic-bezier(0.165, 0.84, 0.44, 1); // easeOutQuart
+    --ease-transform: cubic-bezier(0.19, 1, 0.22, 1); // $easeOutExpo
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-secondary);
+    font-family: 'PTSans', sans-serif;
+    font-weight: 400;
+    color: var(--color-primary);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin: 0 0 var(--space-bottom) 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul, ol {
+    margin: 0 0 var(--space-bottom) -17px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    padding: 0;
+    margin: 50px 0 0 0;
+    color: var(--color-primary);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h);
+    font-family: 'PTSerif', BlinkMacSystemFont, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+h1, .h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+h2, .h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-bottom);
+}
+
+h3, .h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--space-bottom);
+}
+
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6,
+.h1 + .h2,
+.h2 + .h3,
+.h3 + .h4,
+.h4 + .h5,
+.h5 + .h6 {
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-link);
+    transition:
+        color var(--animation-duration-slow),
+        border-colorr var(--animation-duration-slow),
+        backgroundr var(--animation-duration-slow);
+
+    text-decoration: none;
+
+    &:active,
+    &:hover,
+    &:visited:hover,
+    &:focus {
+        color: var(--color-link-hover);
+        transition-duration: var(--animation-duration-slow);
+    }
+
+    &:visited {
+        color: var(--color__link_visited);
+        border-bottom: 1px solid var(--color__link_visited-border);
+        transition-duration: var(--animation-duration-slow);
+    }
+}
+
+table {
+    margin-bottom: var(--space-bottom);
+    border-collapse: collapse;
+    display: block;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    tr {
+        td {
+            padding: 10px;
+            border: 1px solid var(--color-border);
+        }
+        &:first-child td {
+            font-weight: bold;
+        }
+    }
+
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.svg-sprite {
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.rouble {
+    font-family: Rouble, sans-serif;
+    font-weight: normal;
+}

@@ -1,0 +1,16 @@
+.section {
+    padding: var(--space-side-v) 0;
+    overflow: hidden;
+
+    &_another {
+        background: var(--color-panel);
+    }
+
+    &__body {
+        @include sides-space;
+        max-width: var(--page-max);
+        margin-left: auto;
+        margin-right: auto;
+        overflow: auto;
+    }
+}

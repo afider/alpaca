@@ -1,0 +1,24 @@
+.layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+
+    &__header,
+    &__footer {
+
+    }
+
+    &__header {
+        background: var(--color-panel);
+    }
+
+    &__body {
+
+    }
+
+    &__footer {
+        background: var(--color-brand);
+        color: var(--color-secondary);
+    }
+}

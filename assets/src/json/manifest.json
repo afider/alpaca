@@ -1,0 +1,26 @@
+{
+	"name": "Альпака",
+	"lang": "ru",
+	"start_url": "/",
+	"display": "browser",
+	"orientation": "any",
+	"background_color": "white",
+	"description": "Альпака меню",
+	"icons": [{
+		"src": "/img/favicon/favicon-160.png",
+		"sizes": "160x160",
+		"type": "image/png"
+	}, {
+		"src": "/img/favicon/favicon-32.png",
+		"sizes": "32x32",
+		"type": "image/png"
+	}, {
+		"src": "/img/favicon/favicon-16.png",
+		"sizes": "16x16",
+		"type": "image/png"
+	}, {
+		"src": "/img/favicon/favicon.svg",
+		"sizes": "any",
+		"type": "image/svg+xml"
+	}]
+}

@@ -1,0 +1,13 @@
+.table {
+    margin-bottom: var(--space-bottom);
+    padding: 0;
+    display: block;
+
+    &__table {
+        margin-bottom: 0;
+    }
+
+    &__caption {
+
+    }
+}
