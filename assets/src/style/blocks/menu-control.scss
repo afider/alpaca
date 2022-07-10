@@ -2,16 +2,44 @@
     border: none;
     width: var(--tap-region);
     height: var(--tap-region);
-    background: yellow;
+    background: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .is-menu-open & {
-        background: #2d9cdb;
+
     }
 
     @media (min-width: $mq__tablet) {
         display: none;
+    }
 
+    &__item {
+        width: 22px;
+        height: 2px;
+        background: var(--color-ctrl);
+        position: relative;
+
+        &:before {
+            bottom: 100%;
+            margin-bottom: 4px;
+        }
+        &:after {
+            top: 100%;
+            margin-top: 4px;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--color-ctrl);
+        }
     }
 
 

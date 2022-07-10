@@ -1,6 +1,30 @@
 .info {
     display: inline-flex;
     font-weight: 500;
+    color: var(--color-secondary);
+
+    @media (max-width: $mq__mobile_down) {
+        width: var(--tap-region);
+        height: var(--tap-region);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+    }
+
+    &:hover {
+        @media (hover){
+            color: var(--color-link-hover);
+        }
+    }
+
+    &__icon {
+        color: var(--color-icon);
+
+        @media (min-width: $mq__mobile) {
+            margin-right: 10px;
+        }
+    }
 
     &__content {
         display: none;

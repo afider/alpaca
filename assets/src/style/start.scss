@@ -4,7 +4,7 @@
 
     --color-brand: #2d9cdb;
     --color-ctrl: rgb(242 153 74);
-
+    --color-icon: rgb(91 193 44);
     --color-panel: #252830;
     --color-panel-2: #ccc;
     --color-border: #3a3d44;
@@ -69,6 +69,19 @@ body {
     color: var(--color-primary);
     font-size: var(--font-size);
     line-height: var(--line-height);
+
+    &.has-scrollbar.is-menu-open,
+    &.is-menu-open {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    &.has-scrollbar.is-menu-open {
+        position: fixed;
+        overflow-y: scroll;
+    }
 }
 
 img {

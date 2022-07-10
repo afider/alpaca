@@ -4,33 +4,47 @@ document.getElementById('svg-icons').innerHTML = SVG_SPRITE;
     const buttons = document.querySelectorAll('[data-toggle-menu]');
     const page = document.getElementsByTagName('body')[0];
     const openState = 'is-menu-open';
+    const scrollbarState = 'has-scrollbar';
     const openItemState = 'is-open';
     const menuItemName = 'data-menu-parent';
     const menuItems = document.querySelectorAll(`[${menuItemName}]`);
 
-    toggleMobileMenu();
-    toggleParentMenuItems();
+    window.addEventListener('resize', debounce(function() {
+        addClassNameIfPageHasVScrollbar();
+        removeMenuItemsOpenState();
 
-    function toggleMobileMenu() {
-        window.addEventListener('resize', debounce(function() {
+        page.classList.remove(openState);
+    }));
+
+    document.addEventListener('keyup', (event) => {
+        if (event.code.toUpperCase() === 'ESCAPE') {
+            removeMenuItemsOpenState();
             page.classList.remove(openState);
+        }
+    });
 
-            Array.from(menuItems).map((el) => {
-                el.parentElement.classList.remove(openItemState);
-            });
-        }));
-
-        document.addEventListener('keyup', (event) => {
-            if (event.code.toUpperCase() === 'ESCAPE') {
-                page.classList.remove(openState);
-            }
+    Array.from(buttons).map((el) => {
+        el.addEventListener('click', () => {
+            removeMenuItemsOpenState();
+            page.classList.toggle(openState);
         });
+    });
 
-        Array.from(buttons).map((el) => {
-            el.addEventListener('click', () => {
-                page.classList.toggle(openState);
-            });
+    toggleParentMenuItems();
+    addClassNameIfPageHasVScrollbar();
+
+    function removeMenuItemsOpenState() {
+        Array.from(menuItems).map((el) => {
+            el.parentElement.classList.remove(openItemState);
         });
+    }
+
+    function addClassNameIfPageHasVScrollbar() {
+        if(document.body.scrollHeight > document.body.clientHeight){
+            page.classList.add(scrollbarState);
+        } else {
+            page.classList.remove(scrollbarState);
+        }
     }
 
     function debounce(func, timeout = 300) {
