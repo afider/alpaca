@@ -1,4 +1,7 @@
 .menu-control {
+    --menu-control-dim: 22px;
+    --menu-control-border: 2px;
+
     border: none;
     width: var(--tap-region);
     height: var(--tap-region);
@@ -8,27 +11,41 @@
     align-items: center;
     justify-content: center;
 
-    .is-menu-open & {
-
-    }
-
     @media (min-width: $mq__tablet) {
         display: none;
     }
 
     &__item {
-        width: 22px;
-        height: 2px;
+        min-width: var(--menu-control-dim);
+        width: var(--menu-control-dim);
+        height: var(--menu-control-border);
         background: var(--color-ctrl);
         position: relative;
+        transition-property: background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--ease);
+
+        .is-menu-open & {
+            background: none;
+        }
 
         &:before {
             bottom: 100%;
             margin-bottom: 4px;
+
+            .is-menu-open & {
+                margin-bottom: -2px;
+                transform: rotate(45deg);
+            }
         }
         &:after {
             top: 100%;
             margin-top: 4px;
+
+            .is-menu-open & {
+                margin-top: -2px;
+                transform: rotate(-45deg);
+            }
         }
 
         &:before,
@@ -36,11 +53,12 @@
             content: '';
             position: absolute;
             display: block;
-            width: 22px;
-            height: 2px;
+            width: var(--menu-control-dim);
+            height: var(--menu-control-border);
             background: var(--color-ctrl);
+            transition-property: margin-top, margin-bottom, transform;
+            transition-duration: var(--animation-duration);
+            transition-timing-function: var(--ease);
         }
     }
-
-
 }
