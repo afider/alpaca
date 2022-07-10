@@ -39,3 +39,5 @@ The `src` directory contains the project source files. When a file changes, it i
 
 `style` — all scss-files are located here, they are connected in the common.css file using rigger too.
 
+## Generated website on the server
+[https://afider.github.io/alpaca.github.io/](https://afider.github.io/alpaca.github.io/)
