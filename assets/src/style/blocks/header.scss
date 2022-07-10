@@ -47,6 +47,8 @@
         }
 
         &_info {
+            display: flex;
+            align-items: center;
             margin-left: auto;
             @media (min-width: $mq__mobile) {
                 margin-left: 0;

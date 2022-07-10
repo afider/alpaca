@@ -1,4 +1,6 @@
 .menu {
+    font-size: var(--font-size-l);
+
     &__list {
         margin: 0 0 0 -10px;
         padding: 0;
@@ -9,10 +11,18 @@
             flex-direction: column;
         }
     }
+    
+    &__item {
+        
+    }
 
     &__link {
         margin: 0;
         padding: 2px 10px;
         border-bottom: none;
+    }
+    
+    &__item-name {
+        
     }
 }

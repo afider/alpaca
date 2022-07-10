@@ -15,6 +15,7 @@
 
     // Font size
     --font-size: 16px;
+    --font-size-l: 18px;
     --font-size-caption: 12px;
 
     --font-size-h1: 30px;
@@ -130,15 +131,15 @@ a {
         color var(--animation-duration-slow),
         border-colorr var(--animation-duration-slow),
         backgroundr var(--animation-duration-slow);
-
+    transition-duration: var(--animation-duration-slow);
     text-decoration: none;
 
     &:active,
     &:hover,
-    &:visited:hover,
     &:focus {
-        color: var(--color-link-hover);
-        transition-duration: var(--animation-duration-slow);
+        @media (hover){
+            color: var(--color-link-hover);
+        }
     }
 
     &:visited {
