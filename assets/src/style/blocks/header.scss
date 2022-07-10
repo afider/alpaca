@@ -38,6 +38,7 @@
                 transition-property: transform;
                 transition-duration: var(--animation-duration);
                 transition-timing-function: var(--ease);
+                overflow-y: auto;
             }
 
             @media (max-width: $mq__mobile_down) {
@@ -60,9 +61,4 @@
             }
         }
     }
-
-    &__menu {
-
-    }
-
 }
