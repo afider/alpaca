@@ -3,6 +3,8 @@
     --color-secondary: #fafafa;
 
     --color-brand: #2d9cdb;
+    --color-ctrl: rgb(242, 153, 74);
+
     --color-panel: #252830;
     --color-panel-2: #ccc;
     --color-border: #3a3d44;
@@ -10,7 +12,7 @@
     --color-overlay: rgba(19 20 23 / 50%);
 
     --color-link: rgba(11,90,176);
-    --color-link-hover: rgb(73 120 176);
+    --color-link-hover: rgba(235, 87, 87, 1);
     --color-link-visited: rgb(184 94 207);
 
     // Font size
@@ -127,11 +129,8 @@ h5 + h6,
 
 a {
     color: var(--color-link);
-    transition:
-        color var(--animation-duration-slow),
-        border-colorr var(--animation-duration-slow),
-        backgroundr var(--animation-duration-slow);
-    transition-duration: var(--animation-duration-slow);
+    transition: color var(--animation-duration);
+    transition-duration: var(--animation-duration);
     text-decoration: none;
 
     &:active,
@@ -144,7 +143,6 @@ a {
 
     &:visited {
         color: var(--color-link-visited);
-        transition-duration: var(--animation-duration-slow);
     }
 }
 

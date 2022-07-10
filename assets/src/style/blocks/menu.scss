@@ -1,8 +1,10 @@
 .menu {
+    --item-mobile-padding: 20px;
+
     font-size: var(--font-size-l);
 
     &__list {
-        margin: 0 0 0 -10px;
+        margin: 0;
         padding: 0;
         list-style-type: none;
         display: flex;
@@ -10,19 +12,106 @@
         @media (max-width: $mq__tablet_down) {
             flex-direction: column;
         }
+
+        &_sub {
+            font-size: var(--font-size);
+            display: none;
+        }
     }
-    
+
+    &__list_sub &__list_sub &__item-name {
+        padding-left: calc(var(--item-mobile-padding) + 20px);
+    }
+
     &__item {
-        
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    &__item:hover > &__item-name + &__list_sub {
+        @media (hover and min-width: $mq__tablet){
+            display: flex;
+            background: red;
+        }
     }
 
     &__link {
+        display: block;
         margin: 0;
-        padding: 2px 10px;
         border-bottom: none;
+    }
+
+    &__link,
+    &__link:visited {
+        color: var(--color-secondary);
     }
     
     &__item-name {
-        
+        white-space: nowrap;
+        display: block;
+        cursor: pointer;
+        padding: var(--item-mobile-padding) 10px var(--item-mobile-padding) var(--item-mobile-padding);
+        transition: color var(--animation-duration);
+        transition-duration: var(--animation-duration);
+        position: relative;
+        user-select: none;
+
+        &:hover {
+            @media (hover){
+                color: var(--color-link-hover);
+            }
+        }
+
+        @media (max-width: $mq__tablet_down) {
+            transition: background-color var(--animation-duration);
+            transition-duration: var(--animation-duration);
+            background: var(--color-panel);
+            margin-bottom: 1px;
+        }
     }
+
+    &__item-text {
+        position: relative;
+        display: inline-block;
+        padding-right: 24px;
+        max-width: 100%;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__item_parent > &__item-name &__item-text {
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: rotate(180deg) translateY(30%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 4px 6px 4px;
+            border-color: transparent transparent var(--color-ctrl) transparent;
+            transition-property: transform;
+            transition-duration: var(--animation-duration);
+        }
+    }
+
+    &__item_parent.is-open > &__item-name &__item-text {
+        &:after {
+            transform: rotate(0) translateY(-30%);
+        }
+    }
+
+    &__item_parent.is-open > &__item-name {
+        @media (max-width: $mq__tablet_down) {
+            background: var(--color-primary);
+        }
+    }
+
+    &__item_parent.is-open > &__item-name + &__list_sub {
+        @media (max-width: $mq__tablet_down) {
+            display: flex;
+        }
+    }
+
 }
