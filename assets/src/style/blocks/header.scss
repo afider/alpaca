@@ -14,6 +14,11 @@
 
     &__item {
         &_menu {
+            @media (min-width: $mq__tablet) {
+                display: flex;
+                justify-content: center;
+                flex: 1 1 auto;
+            }
 
             .is-menu-open & {
                 @media (max-width: $mq__tablet_down) {

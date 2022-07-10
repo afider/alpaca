@@ -1,16 +1,23 @@
-window.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('svg-icons').innerHTML = SVG_SPRITE;
+document.getElementById('svg-icons').innerHTML = SVG_SPRITE;
 
-    //toggleMobileMenu();
+(function () {
+    const buttons = document.querySelectorAll('[data-toggle-menu]');
+    const page = document.getElementsByTagName('body')[0];
+    const openState = 'is-menu-open';
+    const openItemState = 'is-open';
+    const menuItemName = 'data-menu-parent';
+    const menuItems = document.querySelectorAll(`[${menuItemName}]`);
+
+    toggleMobileMenu();
     toggleParentMenuItems();
 
     function toggleMobileMenu() {
-        const buttons = document.querySelectorAll('[data-toggle-menu]');
-        const page = document.getElementsByTagName('body')[0];
-        const openState = 'is-menu-open';
-
         window.addEventListener('resize', debounce(function() {
             page.classList.remove(openState);
+
+            Array.from(menuItems).map((el) => {
+                el.parentElement.classList.remove(openItemState);
+            });
         }));
 
         document.addEventListener('keyup', (event) => {
@@ -35,10 +42,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleParentMenuItems() {
-        const menuItemName = 'data-menu-parent';
-        const menuItems = document.querySelectorAll(`[${menuItemName}]`);
-        const openItemState = 'is-open';
-
         Array.from(menuItems).map((el) => {
 
             el.addEventListener('click', (event) => {
@@ -54,4 +57,4 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-})
+}());

@@ -5,16 +5,18 @@ $mq__desktop_wide: 1600px;
 $mq__desktop: 1440px;
 $mq__laptop: 1200px;
 $mq__tablet_wide: 992px;
-$mq__tablet: 768px;
+$mq__tablet: 850px;
 $mq__mobile_wide: 576px;
 $mq__mobile: 376px;
 
+$reduce: 0.02px;
+
 /* mq for max-width reduced by 0.2 pixel like bootstrap */
-$mq__desktop_wide_down: 1599.98px;
-$mq__desktop_down: 1439.98px;
-$mq__laptop_down: 1199.98px;
-$mq__tablet_wide_down: 991.98px;
-$mq__tablet_down: 767.98px;
-$mq__mobile_wide_down: 575.98px;
-$mq__mobile_down: 375.98px;
+$mq__desktop_wide_down: calc($mq__desktop_wide - $reduce);
+$mq__desktop_down: calc($mq__desktop - $reduce);
+$mq__laptop_down: calc($mq__laptop - $reduce);
+$mq__tablet_wide_down: calc($mq__tablet_wide - $reduce);
+$mq__tablet_down: calc($mq__tablet - $reduce);
+$mq__mobile_wide_down: calc($mq__mobile_wide - $reduce);
+$mq__mobile_down: calc($mq__mobile - $reduce);
 
